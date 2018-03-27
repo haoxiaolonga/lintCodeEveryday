@@ -6,8 +6,13 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * 三跳之内的朋友
- */
+ * class_name: Name932
+ * package: test201803.day27
+ * describe: lintcode932
+ * creat_user: haoxiaol
+ * creat_date: 2018/3/27
+ * creat_time: 下午10:00
+ **/
 public class Name932 {
 
     public static  void main(String[] args) {
@@ -21,14 +26,15 @@ public class Name932 {
 
 
     /**
-     *
-     * @param a
-     * @param b
-     * @param c
-     * @param d
-     * @return
-     */
+     * method_name: withinThreeJumps
+     * param: [a, b, c, d]
+     * describe: 判断是否为3跳内的朋友ß
+     * creat_user: haoxiaol
+     * creat_date: 2018/3/27
+     * creat_time: 下午9:58
+     **/
     public static int[] withinThreeJumps(int[] a, int[] b, int[] c, int[] d) {
+
         // Write your code here
 
         if (c.length != d.length) return new int[]{};
