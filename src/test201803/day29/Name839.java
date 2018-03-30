@@ -50,7 +50,10 @@ public class Name839{
         List<Interval> res = new ArrayList<Interval>();
         Interval temp = null;
         while (oneIndex <= oneSize || twoIndex <= twoSize) { //直到两个遍历完全
-            if (reqOneList && oneIndex < oneSize ) { //请求第一个
+
+            updateTempValue(reqOneList,reqTwoList,oneIndex,twoIndex,oneSize,twoSize,list1,list2,temp);
+            updateTempValue(reqTwoList,reqOneList,twoIndex,oneIndex,twoSize,oneSize,list2,list1,temp);
+           /* if (reqOneList && oneIndex < oneSize ) { //请求第一个
                 Interval tempFirst = list1.get(oneIndex);
                 if (compareBetween(temp, tempFirst)) { //与1数组相交
                     temp.start = Math.min(temp.start, tempFirst.start);
@@ -63,8 +66,8 @@ public class Name839{
                 } else { //不相交了，则index不变
                     reqOneList = false;
                 }
-            }
-            if (reqTwoList && twoIndex < twoSize) {
+            }*/
+            /*if (reqTwoList && twoIndex < twoSize) {
                 Interval tempTwo = list2.get(twoIndex);
                 //不相交了，则index不变
                 if (compareBetween(temp, tempTwo)) { //与1数组相交
@@ -78,7 +81,7 @@ public class Name839{
                 } else {
                     reqTwoList = false;
                 }
-            }
+            }*/
             if ( (!reqOneList && !reqTwoList) || temp == null ) { //不相交的
                 if (temp != null) {
                     res.add(new Interval(temp.start, temp.end));
@@ -137,7 +140,36 @@ public class Name839{
                 || b.start >= a.start && b.start <= a.end;
 
     }
+    /**
+     * method_name: updateTempValue
+     * param: [req, index, size, temp]
+     * param: void
+     * describe: 更新temp的属性
+     * creat_user: haoxiaol
+     * creat_date: 2018/3/30
+     * creat_time: 14:47
+     **/
+    public void updateTempValue(boolean req1, boolean req2,
+                                int index1, int index2,
+                                int size1, int size2,
+                                List<Interval> list1, List<Interval> list2,
+                                Interval temp) {
+        if (req1 && index1 < size1 ) { //请求第一个
+            Interval tempFirst = list1.get(index1);
+            if (compareBetween(temp, tempFirst)) { //与1数组相交
+                temp.start = Math.min(temp.start, tempFirst.start);
+                temp.end = Math.max(temp.end, tempFirst.end);
+                index1 ++;//向后移动
+                req2 = index2 < size2; //可能又与2相交，但是不可越界
+                if (index1 == size1) {
+                    req1 = false;
+                }
+            } else { //不相交了，则index不变
+                req1 = false;
+            }
+        }
 
+    }
 
 
 
