@@ -1,5 +1,8 @@
 package test201803.day30;
 
+
+import org.junit.Test;
+
 /**
  * class_name: Lambda
  * package: test201803.day30
@@ -10,7 +13,8 @@ package test201803.day30;
  **/
 public class Lambda {
 
-    public void testOne(int a) {
+    @Test
+    public void testOne() {
         new Thread( () ->System.out.println(" 这是一个测试") ).start();
     }
 }
