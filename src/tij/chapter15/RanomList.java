@@ -22,6 +22,7 @@ public class RanomList<T> {
         arr.add(t);
     }
 
+
     public T select() {
         return arr.get(rand.nextInt(arr.size()));
     }
@@ -29,10 +30,19 @@ public class RanomList<T> {
     public static void main(String[] args) {
 
         RanomList<String> t1 = new RanomList<>();
+        //练习6 --试试其他类型
+        RanomList<Integer> t2 = new RanomList<>();
+        RanomList<Float> t3 = new RanomList<>();
         for (int i = 0; i <= 10; i++) {
-            t1.add("num"+ i);
+
+            t1.add("num" + i);
+            t2.add(i);
+            t3.add(i * 0.1f);
         }
         System.out.println(t1.select());
+        System.out.println(t2.select());
+        System.out.println(t3.select());
+
     }
 
 }
