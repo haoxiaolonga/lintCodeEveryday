@@ -12,7 +12,7 @@ public class InheritInner extends WithInner.Inner{
 
 
     //此处必须声明继承类所在外部类的构造器  ，否则编译器报编译错误
-    InheritInner(WithInner wi){
+    public InheritInner(WithInner wi){
         wi.super();
     }
 
