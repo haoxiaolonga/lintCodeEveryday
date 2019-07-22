@@ -6,7 +6,7 @@ import java.lang.reflect.Proxy;
 
 /**
 *@ClassName JdkProxyFactory
-*@Description  jdk动态代理
+*@Description  jdk动态代理，只能代理实现了接口的类
 *@Author haoxl
 *@Date 2019/7/22 9:50
 */
