@@ -1,5 +1,8 @@
 package effective_java.test1.demo2;
 
+import java.util.Date;
+
+
 public class NutritionFacts {
 
     private final int servingSize;
@@ -63,10 +66,16 @@ public class NutritionFacts {
         carbohydrate = bulider.carbohydrate;
     }
 
+
     public static void main(String[] args) {
         // bulider模式
-        NutritionFacts test = new NutritionFacts.Bulider(1,1).calories(1).bulid();
+//        NutritionFacts test = new NutritionFacts.Bulider(1,1).calories(1).bulid();
 
+        String str1 = new StringBuilder("test").append("test").toString();
+        System.out.println(str1.intern() == str1);
+
+        String str2 = new StringBuilder("ja").append("va").toString();
+        System.out.println(str2.intern() == str2);
     }
 
 }
