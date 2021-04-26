@@ -12,6 +12,7 @@ public interface AA extends Set, Lock {
 
     public static void main(String[] args) {
         // hello
+        System.out.println("");
     }
     
 }
